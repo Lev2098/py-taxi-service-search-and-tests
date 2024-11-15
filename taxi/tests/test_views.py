@@ -32,6 +32,5 @@ class TaxiViewsTest(TestCase):
         )
         response = self.client.get(reverse("taxi:driver-detail",
                                            args=[self.driver.pk]))
-        print(response.content)
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, "driveruser")
